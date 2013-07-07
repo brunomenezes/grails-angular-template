@@ -12,14 +12,14 @@ class GrailsAngularTemplateGrailsPlugin {
 
     // TODO Fill in these fields
     def title = "Grails Angular Template Plugin" // Headline display name of the plugin
-    def author = "Your name"
-    def authorEmail = ""
+    def author = "Bruno Menezes"
+    def authorEmail = "brunodmenezes@icloud.com"
     def description = '''\
-Brief summary/description of the plugin.
+        The best way to load gsp\'s templates with angular build-in structures, using the steady grails mechanism of template load.
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/grails-angular-template"
+    def documentation = "https://github.com/brunomenezes/grails-angular-template"
 
     // Extra (optional) plugin metadata
 
@@ -30,7 +30,7 @@ Brief summary/description of the plugin.
 //    def organization = [ name: "My Company", url: "http://www.my-company.com/" ]
 
     // Any additional developers beyond the author specified above.
-//    def developers = [ [ name: "Joe Bloggs", email: "joe@bloggs.net" ]]
+      def developers = [ [ name: "Fábio Oshiro", email: "joe@bloggs.net" ]]
 
     // Location of the plugin's issue tracker.
 //    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPMYPLUGIN" ]
