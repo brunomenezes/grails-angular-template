@@ -1,39 +1,22 @@
 class GrailsAngularTemplateGrailsPlugin {
-    // the plugin version
     def version = "0.1"
-    // the version or versions of Grails the plugin is designed for
     def grailsVersion = "2.1 > *"
-    // the other plugins this plugin depends on
-    def dependsOn = [:]
-    // resources that are excluded from plugin packaging
+    def dependsOn = [resources:"1.2"]
     def pluginExcludes = [
         "grails-app/views/error.gsp"
     ]
-
-    // TODO Fill in these fields
-    def title = "Grails Angular Template Plugin" // Headline display name of the plugin
+    def license = "APACHE"
+    def title = "Grails Angular Template Plugin"
     def author = "Bruno Menezes"
     def authorEmail = "brunodmenezes@icloud.com"
     def description = '''\
         The best way to load gsp\'s templates with angular build-in structures, using the steady grails mechanism of template load.
 '''
-
     // URL to the plugin's documentation
+    def organization = [ name: "KDW-Tecnologia Informática LTDA", url:'']
+    def developers = [ [ name: "Fábio Oshiro", email: "fabio.oshiro@gmail.com" ]]
     def documentation = "https://github.com/brunomenezes/grails-angular-template"
-
-    // Extra (optional) plugin metadata
-
-    // License: one of 'APACHE', 'GPL2', 'GPL3'
-//    def license = "APACHE"
-
-    // Details of company behind the plugin (if there is one)
-//    def organization = [ name: "My Company", url: "http://www.my-company.com/" ]
-
-    // Any additional developers beyond the author specified above.
-      def developers = [ [ name: "Fábio Oshiro", email: "joe@bloggs.net" ]]
-
-    // Location of the plugin's issue tracker.
-//    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPMYPLUGIN" ]
+    def issueManagement = [ system: "GitHub", url: "https://github.com/brunomenezes/grails-angular-template/issues" ]
 
     // Online location of the plugin's browseable source code.
 //    def scm = [ url: "http://svn.codehaus.org/grails-plugins/" ]
