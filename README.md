@@ -1,4 +1,4 @@
-grails-angular-template
+Grails Angular Template
 =======================
 
-using angular to load snippets or full html content
+<iframe src="http:www.globo.com"></iframe>
