@@ -88,7 +88,7 @@ _We said to `templateService` loads the template1 inside a section with class li
 _By default after complete all cycle on the template service, they will broadcast a event, with the same name informed on `load()`. The data passed through that event is the map passed on `withData()`. If you for some reason want to listen that event and do something that is the way. If you don't want to broadcast just do `withData({broadcast:false})`_
 
 ##Methods and Arguments
-+ `load()` _@String `'/user/templateName'`_
-+ `into()` _@String `'.someClassName' or 'section[name='mySection']'`_
-+ `withData()` _@Object `{key:value}` but with 2 special keys **scope** and **broadcast**._
++ `load()` _@String  example : `'/user/templateName'`_
++ `into()` _@String  example : `'.someClassName' or any css selector_
++ `withData()` _@Object exaple : `{key:value}` but with 2 special keys **scope** and **broadcast**._
 + `start()` _@None. Make the magic happens_
