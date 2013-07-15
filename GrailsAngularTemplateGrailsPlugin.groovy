@@ -1,7 +1,7 @@
 class GrailsAngularTemplateGrailsPlugin {
     def version = "0.1"
     def grailsVersion = "2.1 > *"
-    def dependsOn = [resources:"1.2"]
+    def dependsOn = [resources:"1.0 > *"]
     def pluginExcludes = [
         "grails-app/views/error.gsp"
     ]

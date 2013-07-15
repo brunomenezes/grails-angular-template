@@ -1,9 +1,9 @@
 var module = angular.module('grails-angular-template', []);
 	module.factory('templateService', ['$http', '$rootScope', '$compile', function($http, $rootScope, $compile){
-			var url = config.contextPath + "/templateLoader/loader?templateName="; 
+			var url = $gatContextPath + "/templateLoader/loader?templateName="; 
 			var templateService = new function(){
 				var self = this;
-				var _resourceLocation, _selector, _data;
+				var _resourceLocation, _selector, _data = {};
 				this.load = function(url){
 					_resourceLocation = url;
 					return self;
@@ -36,6 +36,7 @@ var module = angular.module('grails-angular-template', []);
 					});
 				}
 			}
+
 			return templateService;
 		}
 	]);
