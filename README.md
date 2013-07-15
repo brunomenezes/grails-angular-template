@@ -89,6 +89,6 @@ _By default after complete all cycle on the template service, they will broadcas
 
 ##Methods and Arguments
 + `load()` _@String  example : `'/user/templateName'`_
-+ `into()` _@String  example : `'.someClassName' or any css selector_
++ `into()` _@String  example : `tag.someClassName` or any **css selector**_
 + `withData()` _@Object exaple : `{key:value}` but with 2 special keys **scope** and **broadcast**._
 + `start()` _@None. Make the magic happens_
