@@ -1,4 +1,4 @@
 Grails Angular Template
 =======================
 
-<iframe src="http:www.globo.com"></iframe>
+<iframe src="http://www.readability.com"></iframe>
