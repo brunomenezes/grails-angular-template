@@ -5,7 +5,7 @@ _Grails Angular Template is born to simplify the use of templates on a grails ap
 
 ##Dependencies
 + angularJS (We do not provide the base code.)
-+ Jquery (To use the fancy query selector inside the service that we provide to you)
++ Jquery (To use the fancy css selector inside the service that we provide to you)
 
 ####But how it works ?
 Maybe you heard about the *Resource.groovy class before, and all that awesome dependencies structure that it provides.This plugin works together with the layoutResources. I mean behind the stuffs you will use a taglib to bootstrap some stuffs. All you're need to do is put `<gat:bootstrap/>` on your main.gsp or whichever layout you want to use. Following a simple example of code structure inside a ApplicationResource.groovy
@@ -30,9 +30,9 @@ after that you can call on the head of you gsp
 ```
 _voilá the angular.js and myAngularApp.js is loaded on the page in the right order. awesome right ?_
 
-**The plugin is approved, and all you need to do is add `compile ":grails-angular-template:0.1"` on** _BuildConfig.groovy_ **dependency and the plugin will be available on your project**
+**The plugin was approved, and all you need to do is add `compile ":grails-angular-template:0.1"` on BuildConfig.groovy dependency and the plugin will be available on your project**
 
-_After that the plugin is available to your app. Do you Remember the *Resources.groovy ? ok, open it. and just add grails angular template on dependsOn declaration like below_
+_Do you Remember the *Resources.groovy ? ok, open it. and just add grails angular template on dependsOn declaration like below_
 
 ```groovy
 	//alot of code over 
