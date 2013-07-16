@@ -30,12 +30,8 @@ after that you can call on the head of you gsp
 ```
 _voilá the angular.js and myAngularApp.js is loaded on the page in the right order. awesome right ?_
 
-Until I publish it on grails central plugin repository, we should do in the manual-way. clone the project inside the same diretory on your app is,
-open the **BuildConfig.groovy** of you application and write this snippet of code like below.
+**The plugin is approved, and all you need to do is add `compile ":grails-angular-template:0.1"` on** _BuildConfig.groovy_ **dependency and the plugin will be available on your project**
 
-```groovy
-grails.plugin.location.grailsangulartemplate = "../grails-angular-template"
-```
 _After that the plugin is available to your app. Do you Remember the *Resources.groovy ? ok, open it. and just add grails angular template on dependsOn declaration like below_
 
 ```groovy
