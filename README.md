@@ -90,5 +90,5 @@ _By default after complete all cycle on the template service, they will broadcas
 + `start()` _@None. Make the magic happens_
 
 ##Changelog
-v0.1 - `templateService` ready to use.
-v0.1.1 - Release of Bug-Fix to solve the uncontrolled grow up number of scopes created. adding the `cleanService`.
++ _v0.1_ - `templateService` ready to use.
++ _v0.1.1_ - Release of Bug-Fix to solve the uncontrolled grow up number of scopes created. adding the `cleanService`.
