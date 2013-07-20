@@ -1,1 +1,55 @@
-var module=angular.module("grails-angular-template",[]);module.factory("templateService",["$http","$rootScope","$compile","cleanService",function(e,t,n,r){var i=$gatContextPath+"/templateLoader/loader?templateName=";var s=false;var o=new function(){var s=this;var o,u,a={};this.load=function(e){o=e;return s};this.into=function(e){u=e;return s};this.withData=function(e){a=e;return s};this.start=function(){e.get(i+o).success(function(e){a.broadcast=a.broadcast===false?false:true;var i=angular.element(u);var s=a.scope?a.scope:t.$new();var f=n(e)(s);r.templateZoneCleaner(i);i.html(f);if(a.broadcast){t.$broadcast(o,a)}else{console.log("avoiding the broadcast")}})}};return o}]);module.factory("cleanService",[function(){return new function(){var e=this;this.templateZoneCleaner=function(e){var t=e.children().scope();t?t.$destroy():undefined}}}])
+var module = angular.module('grails-angular-template', []);
+	module.factory('templateService', ['$http', '$rootScope', '$compile','cleanService', function($http, $rootScope, $compile, cleanService){
+			var url = $gatContextPath + "/templateLoader/loader?templateName="; 
+			var once = false;
+			var templateService = new function(){
+				var self = this;
+				var _resourceLocation, _selector, _data = {};
+				this.load = function(url){
+					_resourceLocation = url;
+					return self;
+				}
+
+				this.into = function(sel){
+					_selector = sel;
+					return self;
+				}
+
+				this.withData = function(data){
+					_data = data;
+					return self;	
+				}
+
+				this.start = function(){
+					$http.get(url + _resourceLocation).success(function(htmlPiece){
+						//the default behaviour is to broadcast to the entire application what template loads, the event has the same name of the url
+						//informed and the data informed is passed too. that way you can intercept and do whatever you want.
+						_data.broadcast = _data.broadcast === false ? false : true;
+						var templateZone = angular.element(_selector);
+					  	var scope = _data.scope? _data.scope : $rootScope.$new();
+				    	var compiledTemplate = $compile(htmlPiece)(scope);
+				    	cleanService.templateZoneCleaner(templateZone);
+				    	templateZone.html(compiledTemplate);	
+
+					   	if(_data.broadcast){
+			    			$rootScope.$broadcast(_resourceLocation, _data);
+			    		} else {
+			    			console.log("avoiding the broadcast");
+			    		}
+					});
+				}
+			}
+
+			return templateService;
+		}
+	]);
+
+	module.factory('cleanService', [function(){
+		return new function(){
+			var _self = this;
+			this.templateZoneCleaner = function(template){
+				var scope = template.children().scope();
+				scope ? scope.$destroy() : undefined;
+			}
+		}
+	}]);
