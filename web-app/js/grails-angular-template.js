@@ -21,18 +21,20 @@ var module = angular.module('grails-angular-template', []);
 				}
 
 				this.start = function(){
-					$http.get(url + _resourceLocation).success(function(htmlPiece){
+					var request = {resourceLocation: _resourceLocation, selector: _selector, data: _data};
+					$http.get(url + request.resourceLocation).success(function(htmlPiece){
 						//the default behaviour is to broadcast to the entire application what template loads, the event has the same name of the url
 						//informed and the data informed is passed too. that way you can intercept and do whatever you want.
-						_data.broadcast = _data.broadcast === false ? false : true;
-						var templateZone = angular.element(_selector);
-					  	var scope = _data.scope? _data.scope : $rootScope.$new();
+						request.data.broadcast = request.data.broadcast === false ? false : true;
+						var templateZone = angular.element(request.selector);
+					  	var scope = request.data.scope? request.data.scope : $rootScope.$new();
+					  	angular.extend(scope, request.data);
 				    	var compiledTemplate = $compile(htmlPiece)(scope);
 				    	cleanService.templateZoneCleaner(templateZone);
-				    	templateZone.html(compiledTemplate);	
+				    	templateZone.html(compiledTemplate);
 
-					   	if(_data.broadcast){
-			    			$rootScope.$broadcast(_resourceLocation, _data);
+					   	if(request.data.broadcast){
+			    			$rootScope.$broadcast(request.resourceLocation, request.data);
 			    		} else {
 			    			console.log("avoiding the broadcast");
 			    		}
