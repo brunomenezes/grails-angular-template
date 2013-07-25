@@ -37,7 +37,7 @@ _Do you Remember the *Resources.groovy ? ok, open it. and just add grails angula
 ```groovy
 	//alot of code over 
 	myAngularApp {
-		dependsOn "angular, grails-angular-template"
+		dependsOn 'jquery, angular, grails-angular-template'
 		resource url:'js/myAngularApp.js'
 	}
 ```
