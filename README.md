@@ -50,8 +50,8 @@ var myAngularModule = angular.module('myApp', ['grails-angular-template']);
 
 //let's define a controller  
 function myController($scope, templateService){
-	templateService.load('/user/template1').into('section.someSection').withData({some reasonable data here}).start()
-	templateService.load('/user/template2').into('nav.someNav').start()	
+	templateService.load('/user/template1').into('section.someSection').withData({txt: "some reasonable data here"}).start();
+	templateService.load('/user/template2').into('nav.someNav').start();
 }
 ``` 
 _The magic is all in the template service, when you inject the grails-angular-template module inside your module, this service is provided. another nice thing is, you can concatenate the methods. The `load()` and `into()` is required, because what do you want load and where ? but the `withData()` is optional.One last thing the `start()` must be the last method to be called._
