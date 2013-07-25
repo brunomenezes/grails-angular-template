@@ -23,7 +23,7 @@ modules={
 ```
 after that you can call on the head of you gsp
 
-```
+```html
 <head>
 	<r:require module="myAngularApp"/>
 </head>
