@@ -39,7 +39,7 @@ var module = angular.module('grails-angular-template', []);
 					});
 				}
 
-				this.cleanTemplateZone = function(){
+				this.clean = function(){
 					var templateZone = angular.element(_selector);
 					templateZone.empty();
 				}
