@@ -30,17 +30,15 @@ var module = angular.module('grails-angular-template', []);
 				    	var compiledTemplate = $compile(htmlPiece)(scope);
 				    	cleanService.templateZoneCleaner(templateZone);
 				    	templateZone.html(compiledTemplate);	
-
-					   	if(_data.broadcast){
+						if(_data.broadcast){
 			    			$rootScope.$broadcast(_resourceLocation, _data);
-			    		} else {
-			    			console.log("avoiding the broadcast");
-			    		}
+			    		} 
 					});
 				}
 
 				this.clean = function(){
 					var templateZone = angular.element(_selector);
+					cleanService.templateZoneCleaner(templateZone);
 					templateZone.empty();
 				}
 			}
