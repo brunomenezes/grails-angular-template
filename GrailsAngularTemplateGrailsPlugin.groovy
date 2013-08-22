@@ -1,5 +1,5 @@
 class GrailsAngularTemplateGrailsPlugin {
-    def version = "0.1.1"
+    def version = "0.1.2"
     def grailsVersion = "2.0 > *"
     def license = "APACHE"
     def title = "Grails Angular Template Plugin"
