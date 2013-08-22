@@ -88,8 +88,9 @@ _By default after complete all cycle on the template service, they will broadcas
 + `into()` _@String  example : `tag.someClassName` or any **css selector**_
 + `withData()` _@Object exaple : `{key:value}` but with 2 special keys **scope** and **broadcast**._
 + `start()` _@None. Make the magic happens_
-+ 'clean()e' _@None. Just clean the template
++ `clean()` _@None. Just clean the template
 
 ##Changelog
 + _v0.1_ - `templateService` ready to use.
 + _v0.1.1_ - Release of Bug-Fix to solve the uncontrolled grow up number of scopes created. adding the `cleanService`.
++ _v0.1.2_ - Release of feature to clean the template zone. adding the 'clean' method
