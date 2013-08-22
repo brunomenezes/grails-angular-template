@@ -38,6 +38,11 @@ var module = angular.module('grails-angular-template', []);
 			    		}
 					});
 				}
+
+				this.clean = function(){
+					var templateZone = angular.element(_selector);
+					templateZone.empty();
+				}
 			}
 
 			return templateService;
