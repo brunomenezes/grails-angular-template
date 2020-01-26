@@ -7,7 +7,7 @@ _Grails Angular Template is born to simplify the use of templates on a grails ap
 + angularJS (We do not provide the base code.)
 + Jquery (To use the fancy css selector inside the service that we provide to you)
 
-####But how it works ?
+#### But how it works ?
 Maybe you heard about the *Resource.groovy class before, and all that awesome dependencies structure that it provides.This plugin works together with the layoutResources. I mean behind the stuffs you will use a taglib to bootstrap some stuffs. All you're need to do is put `<gat:bootstrap/>` on your main.gsp or whichever layout you want to use. Following a simple example of code structure inside a ApplicationResource.groovy
 ```groovy
 modules={
@@ -56,7 +56,7 @@ function myController($scope, templateService){
 ``` 
 _The magic is all in the template service, when you inject the grails-angular-template module inside your module, this service is provided. another nice thing is, you can concatenate the methods. The `load()` and `into()` is required, because what do you want load and where ? but the `withData()` is optional.One last thing the `start()` must be the last method to be called._
 
-##Be Aware
+## Be Aware
 **`withData()` waits for a Map. and that map has some special keys like 'scope' and 'broadcast'**
 ##What it Scope does ? 
 _Imagine, you will just load a piece of html that hasn't has a ng-controller defined. But in this snipped of code you use the variables of a scope working, so you just need to pass that scope in the `withData({scope:$scope})` and the templateService will understand that they should use that scope to compile that snipped of template. Following a simple example_
@@ -83,14 +83,14 @@ _We said to `templateService` loads the template1 inside a section with class li
 
 _By default after complete all cycle on the template service, they will broadcast a event, with the same name informed on `load()`. The data passed through that event is the map passed on `withData()`. If you for some reason want to listen that event and do something that is the way. If you don't want to broadcast just do `withData({broadcast:false})`_
 
-##Methods and Arguments
+## Methods and Arguments
 + `load()` _@String  example : `'/user/templateName'`_
 + `into()` _@String  example : `tag.someClassName` or any **css selector**_
 + `withData()` _@Object exaple : `{key:value}` but with 2 special keys **scope** and **broadcast**._
 + `start()` _@None. Make the magic happens_
 + `clean()` _@None. Just clean the template 
 
-##Changelog
+## Changelog
 + _v0.1_ - `templateService` ready to use.
 + _v0.1.1_ - Release of Bug-Fix to solve the uncontrolled grow up number of scopes created. adding the `cleanService`.
 + _v0.1.2_ - Release of feature to clean the template zone. adding the 'clean' method
