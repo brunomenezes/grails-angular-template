@@ -3,7 +3,7 @@ Grails Angular Template
 
 _Grails Angular Template is born to simplify the use of templates on a grails application using angular structures._
 
-##Dependencies
+## Dependencies
 + angularJS (We do not provide the base code.)
 + Jquery (To use the fancy css selector inside the service that we provide to you)
 
@@ -58,7 +58,7 @@ _The magic is all in the template service, when you inject the grails-angular-te
 
 ## Be Aware
 **`withData()` waits for a Map. and that map has some special keys like 'scope' and 'broadcast'**
-##What it Scope does ? 
+## What this Scope does ? 
 _Imagine, you will just load a piece of html that hasn't has a ng-controller defined. But in this snipped of code you use the variables of a scope working, so you just need to pass that scope in the `withData({scope:$scope})` and the templateService will understand that they should use that scope to compile that snipped of template. Following a simple example_
 
 _template1.gsp_
@@ -79,7 +79,7 @@ function myController($scope, templateService){
 ```
 _We said to `templateService` loads the template1 inside a section with class listOfUsers. On the 'withData' I said to templateService to use the controller scope, with it they will iterate correctly inside the list of users that I had define early._
 
-##What It Broadcast does ? 
+## What this Broadcast does ? 
 
 _By default after complete all cycle on the template service, they will broadcast a event, with the same name informed on `load()`. The data passed through that event is the map passed on `withData()`. If you for some reason want to listen that event and do something that is the way. If you don't want to broadcast just do `withData({broadcast:false})`_
 
